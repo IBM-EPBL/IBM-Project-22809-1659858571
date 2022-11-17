@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="//db.onlinewebfonts.com/c/d8a3c95906aec0c2483082a82e72cb40?family=WanderlustShine-Regular"
+        rel="stylesheet" type="text/css" />
+
+
+    <title>SMART FASHION RECOMMENDED APPLICATION</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+        @font-face {
+            font-family: Wanderlust;
+            src: url('/Wanderlust Letters-Font/OTF/WanderlustLetters-Regular.otf');
+            font-weight: bold;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            text-align: center;
+            background-color: #23242a;
+            color: #f2f2f2;
+        }
+
+
+        .get {
+            margin-bottom: 40%;
+            margin-left: 38%;
+            margin-top: 15%;
+            width: 70%;
+        }
+
+        .about,
+        .cart,
+        .chatbot {
+            margin: 2%;
+            width: 90%;
+            height: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            background-color: #111111;
+            transition: 0.3s;
+            padding: 1%;
+        }
+
+        .txt {
+
+            text-align: center;
+            margin: 4% 5%;
+
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #151b54;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            font-size: 3vh;
+        }
+
+        .navbar>a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar>a:hover {
+            background: #ddd;
+            color: black;
+        }
+
+        .title {
+            float: left;
+            padding: 12px 12px;
+            color: #f2f2f2;
+        }
+
+        .con a {
+            color: #f2f2f2;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
+            text-decoration: none;
+            background: #111111;
+            padding: 5px;
+            border-radius: 10px;
+
+        }
+
+        .con a:hover {
+            background: #f2f2f2;
+            color: #111111;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bolder;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+        input {
+            position: relative;
+            width: 100%;
+            padding: 10px 10px 10px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: black;
+            background-color: rgb(204, 204, 204);
+            font-size: 1em;
+            letter-spacing: 0.05em;
+            z-index: 10;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            border: none;
+            outline: none;
+            background: #45ffc1;
+            padding: 11px 25px;
+            width: 100px;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:active {
+            opacity: 0.8;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="/logout">Logout </a>
+        <div class="title">
+            <h3><a style="color: white; text-decoration: none;" href="/">Smart Fashion</a></h3>
+        </div>
+    </div>
+    <div style="display: flex; margin-top: 10%;justify-content: center; align-items: center;">
+        <form method="post">
+            <h2>ADD PRODUCT</h2>
+            
+            <input type="text" name="name" placeholder="Name" required>
+
+            <input type="text" name="image" placeholder="ImageURL" required>
+
+            <input type="text" name="rate" placeholder="Rate" required>
+
+            <label for="CATEGORY">CATEGORY:</label>                
+            <select name="categorie" id="CATEGORY">
+                <option value="shirt">Shirt</option>
+                <option value="pant">Pant</option>
+                <option value="watch">Watch</option>
+                <option value="shoe">Shoe</option>
+            </select>
+            <br>
+            <input type="submit" value="ADD">
+        </form>
+    </div>
+</body>
+
+</html>
