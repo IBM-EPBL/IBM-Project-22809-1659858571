@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import ibm_db
 import bcrypt
 conn = ibm_db.connect("DATABASE=bludb;HOSTNAME=824dfd4d-99de-440d-9991-629c01b3832d.bs2io90l08kqb1od8lcg.databases.appdomain.cloud;PORT=30119;SECURITY=SSL; SSLServerCertificateDigiCertGlobalRootCA.crt;PROTOCOL=TCPIP;UID=yxn13720;PWD=46gVfLcYJP6WedPZ;", "", "")
-#url_for('static', filename='style.css')
-
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
