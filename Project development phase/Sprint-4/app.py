@@ -1,3 +1,7 @@
+import configparser
+import ssl
+from sendgrid.helpers.mail import Mail
+from sendgrid import SendGridAPIClient
 import secrets
 from turtle import title
 from unicodedata import category
@@ -12,6 +16,40 @@ conn = ibm_db.connect("DATABASE=bludb;HOSTNAME=824dfd4d-99de-440d-9991-629c01b38
 
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+ssl._create_default_https_context = ssl._create_unverified_context
+
+config = configparser.ConfigParser()
+config.read("config.ini")
+
+try:
+    settings = config["SETTINGS"]
+except:
+    settings = {}
+
+API = settings.get("APIKEY", None)
+from_email = settings.get("FROM", None)
+to_email = settings.get("TO", None)
+subject = "Smart Fashion"
+html_content = 'Fashion Prod'
+print(API)
+
+
+def sendMail(API, from_email, to_email, subject, html_content):
+    if API != None and from_email != None and len(to_email) > 0:
+        message = Mail(from_email, to_email, subject, html_content)
+    try:
+        sg = SendGridAPIClient(API)
+        response = sg.send(message)
+        print(response.status_code)
+        print(response.body)
+        print(response.headers)
+    except Exception as e:
+        print(e)
+
+
+sendMail(API=API, from_email=from_email, to_email=to_email,
+         subject=subject, html_content=html_content)
 
 
 @app.route("/", methods=['GET'])
